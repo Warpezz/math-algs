@@ -1,23 +1,15 @@
-from SpeedCamera import car_speed
-from NumberPlates import plate_checker
+from SpeedCamera import car_speed,random_speed
+from NumberPlatesChecker import plate_checker
+from RandomPlate import make_plate
 import random,string
 
 class Car:
-    def __init__(self, speed):
+    def __init__(self, speed, plate):
         self.speed = speed
-        # self.plate = plate
+        self.plate = plate
 
+amountWanted = int(input("How many random cars should be created?\n"))
 
-x = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(16))
-
-time1mins = random.randint(0,1439)
-
-time2mins = random.randint((time1mins - 60),(time1mins + 60))
-
-distance = (random.randint(1,100)) / 10
-
-car1 = Car(car_speed(time1mins,time2mins,distance))
-
-print(car1.speed)
+cars = [Car(random_speed(),make_plate()) for i in range(amountWanted)]
 
 # TODO: speed and exceeding speed limit bool, randomised num plates and whether valid

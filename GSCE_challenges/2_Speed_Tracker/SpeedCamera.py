@@ -1,9 +1,22 @@
+import random
+
 def get_time_from_24hour(time):
     timeSplit = time.split(":",1) # splitting it up into hours and minutes
     hoursPartInMinutes = int(timeSplit[0]) * 60
     timeReal = hoursPartInMinutes + int(timeSplit[1]) # total time in minutes
 
     return timeReal
+
+def random_speed():
+    time1mins = random.randint(0,1439)
+
+    time2mins = random.randint((time1mins - 60),(time1mins + 60))
+
+    distance = (random.randint(1,100)) / 10
+
+    speed = car_speed(time1mins,time2mins,distance)
+
+    return speed
 
 def car_speed(time1Real,time2Real,camDistance):
     # gets difference
