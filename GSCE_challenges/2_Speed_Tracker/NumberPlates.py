@@ -16,11 +16,12 @@ def plate_checker(numPlate):
     
     return validPlate
 
-numPlate = input("input a number plate of 7 alphanumeric characters\n")
+if __name__ == '__main__':
+    numPlate = input("input a number plate of 7 alphanumeric characters\n")
 
-validPlate = plate_checker(numPlate)
+    validPlate = plate_checker(numPlate)
 
-if validPlate:
-    print("Plate follows the naming scheme")
-else:
-    print("Plate is invalid")
+    if validPlate:
+        print("Plate follows the naming scheme")
+    else:
+        print("Plate is invalid")

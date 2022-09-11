@@ -30,18 +30,19 @@ def car_speed(time1,time2,camDistance):
     return time
     '''
 
-time1 = input("what time did the car pass the first camera?\n")
+if __name__ == '__main__':
+    time1 = input("what time did the car pass the first camera?\n")
 
-if time1[2] != ":":
-    print("Erorr: times must be given in a standard 24-hour format (XX:XX)")
+    if time1[2] != ":":
+        print("Erorr: times must be given in a standard 24-hour format (XX:XX)")
 
-time2 = input("what time did the car pass the second camera?\n")
+    time2 = input("what time did the car pass the second camera?\n")
 
-if time2[2] != ":":
-    print("Erorr: times must be given in a standard 24-hour format (XX:XX)")
+    if time2[2] != ":":
+        print("Erorr: times must be given in a standard 24-hour format (XX:XX)")
 
-camDistance = input("how far away are the cameras (mi)?\n")
+    camDistance = input("how far away are the cameras (mi)?\n")
 
-speed = car_speed(time1,time2,camDistance)
+    speed = car_speed(time1,time2,camDistance)
 
-print(f'{speed}mph')
+    print(f'{speed}mph')

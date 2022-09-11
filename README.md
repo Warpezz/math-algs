@@ -1,2 +1,2 @@
 # math-algs
-Man im so bored :trollface:
+just my personal repo for random stuff
