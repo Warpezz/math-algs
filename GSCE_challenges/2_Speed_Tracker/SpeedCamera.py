@@ -1,16 +1,20 @@
+def get_time_from_24hour(time):
+    timeSplit = time.split(":",1) # splitting it up into hours and minutes
+    hoursPartInMinutes = int(timeSplit[0]) * 60
+    timeReal = hoursPartInMinutes + int(timeSplit[1]) # total time in minutes
+
+    return timeReal
+
 def car_speed(time1,time2,camDistance):
-    time1split = time1.split(":",1)
-    time1hours = int(time1split[0]) * 60
-    time1real = time1hours + int(time1split[1])
+    time1Real = get_time_from_24hour(time1)
+    time2Real = get_time_from_24hour(time2)
 
-    time2split = time2.split(":",1)
-    time2hours = int(time2split[0]) * 60
-    time2real = time2hours + int(time2split[1])
 
-    if time1real < time2real:
-        timemins = time2real - time1real
+    # gets difference
+    if time1Real < time2Real:
+        timemins = time2Real - time1Real
     else:
-        timemins = time2real + (1440 - time1real)
+        timemins = time2Real + (1440 - time1Real)
 
     timehours = timemins / 60
 
@@ -20,17 +24,16 @@ def car_speed(time1,time2,camDistance):
 
     return speed_mph_rounded
 
-    '''
-    mins = timemins % 60
+def get_difference_hoursmins(difference):
+    mins = difference % 60
     
-    hours = int((timemins - mins) / 60)
+    hours = int((difference - mins) / 60)
 
     time = (f'{hours}h{mins}m')
 
     return time
-    '''
 
-if __name__ == '__main__':
+def make_speed():
     time1 = input("what time did the car pass the first camera?\n")
 
     if time1[2] != ":":
@@ -46,3 +49,6 @@ if __name__ == '__main__':
     speed = car_speed(time1,time2,camDistance)
 
     print(f'{speed}mph')
+
+if __name__ == '__main__':
+    make_speed()
