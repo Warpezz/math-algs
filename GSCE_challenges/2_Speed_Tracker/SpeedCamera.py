@@ -12,7 +12,7 @@ def random_speed():
 
     time2mins = random.randint((time1mins + 1),(time1mins + 60))
 
-    distance = (random.randint(1,100)) / 10
+    distance = (random.randint(1,100))
 
     speed = car_speed(time1mins,time2mins,distance)
 

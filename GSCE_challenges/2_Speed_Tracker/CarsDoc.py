@@ -19,11 +19,9 @@ class Car:
 
 amountWanted = int(input("How many random cars should be created?\n"))
 
-cars = [Car(random_speed(),make_plate()) for i in range(amountWanted)]
+cars = [Car(random_speed(),make_plate(bool(random.randint(0,1)))) for i in range(amountWanted)]
 
-print(cars[0].speed)
-print(cars[0].isSpeeding)
-print(cars[0].plate)
-print(cars[0].hasValidPlate)
-
-# TODO: speed and exceeding speed limit bool, randomised num plates and whether valid
+i = 1
+for _ in cars:
+    print(f"car {i}: speed = {_.speed}mph, is speeding = {_.isSpeeding}, number plate = {_.plate}, plate is valid = {_.hasValidPlate}")
+    i += 1
