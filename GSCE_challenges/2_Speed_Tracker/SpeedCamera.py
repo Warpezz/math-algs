@@ -5,11 +5,7 @@ def get_time_from_24hour(time):
 
     return timeReal
 
-def car_speed(time1,time2,camDistance):
-    time1Real = get_time_from_24hour(time1)
-    time2Real = get_time_from_24hour(time2)
-
-
+def car_speed(time1Real,time2Real,camDistance):
     # gets difference
     if time1Real < time2Real:
         timemins = time2Real - time1Real
@@ -46,7 +42,10 @@ def make_speed():
 
     camDistance = input("how far away are the cameras (mi)?\n")
 
-    speed = car_speed(time1,time2,camDistance)
+    time1Real = get_time_from_24hour(time1)
+    time2Real = get_time_from_24hour(time2)
+
+    speed = car_speed(time1Real,time2Real,camDistance)
 
     print(f'{speed}mph')
 
