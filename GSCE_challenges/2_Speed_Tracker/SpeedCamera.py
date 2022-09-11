@@ -10,7 +10,7 @@ def get_time_from_24hour(time):
 def random_speed():
     time1mins = random.randint(0,1439)
 
-    time2mins = random.randint((time1mins - 60),(time1mins + 60))
+    time2mins = random.randint((time1mins + 1),(time1mins + 60))
 
     distance = (random.randint(1,100)) / 10
 
