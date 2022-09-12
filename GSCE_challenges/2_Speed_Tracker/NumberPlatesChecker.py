@@ -5,11 +5,11 @@ def plate_checker(numPlate):
     if len(numPlate) != 7:
         validPlate = False
     else:
-        if numPlate[0:1].isalpha() == False:
+        if numPlate[0:2].isalpha() == False:
             validPlate = False
-        elif numPlate[2:3].isdigit() == False:
+        elif numPlate[2:4].isdigit() == False:
             validPlate = False
-        elif numPlate[4:6].isalpha() == False:
+        elif numPlate[4:7].isalpha() == False:
             validPlate = False
 
     
