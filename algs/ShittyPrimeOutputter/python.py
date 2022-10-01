@@ -1,7 +1,6 @@
 # crazy skills learnt from fucking around in year 10 computing class
 
 def prime_outputter(amountWanted):
-    global primesList
     primesList = []
     numToTest = 2
     while len(primesList) < amountWanted:
@@ -15,9 +14,8 @@ def prime_outputter(amountWanted):
         if isPrime == True:
             primesList.append(numToTest)
         numToTest += 1
+    return primesList
 
 amountWanted = input("How many p[rimes?\n")
 
-prime_outputter(int(amountWanted))
-
-print(primesList)
+print(prime_outputter(amountWanted))
